@@ -6,6 +6,6 @@ WORKDIR /usr/src/app
 RUN pip install --no-cache-dir pipenv
 RUN if [ -f Pipfile ]; then pipenv install --deploy --ignore-pipfile; else pipenv --python 3.8 install; fi
 
-COPY . .
+COPY ./main.py .
 
 CMD ["pipenv", "run", "python", "main.py"]
